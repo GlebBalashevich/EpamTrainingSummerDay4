@@ -4,8 +4,6 @@ import by.balashevich.arrayapp.entity.ArithmeticArray;
 import by.balashevich.arrayapp.exception.InvalidArrayDataException;
 import by.balashevich.arrayapp.validator.ArrayValidator;
 
-import java.util.OptionalInt;
-
 public class ArraySearcher {
     private static final int[] PRIME_DIVIDERS = {2, 3, 5, 7};
 

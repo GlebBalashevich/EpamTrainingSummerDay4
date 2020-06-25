@@ -1,7 +1,5 @@
 package by.balashevich.arrayapp.entity;
 
-import by.balashevich.arrayapp.exception.InvalidArrayDataException;
-
 import java.util.OptionalInt;
 
 public class ArithmeticArray {

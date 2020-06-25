@@ -8,7 +8,7 @@ public class ArrayValidator {
     public boolean validateArrayBinarySearch(ArithmeticArray array) throws InvalidArrayDataException {
         boolean isValid = true;
 
-        if (array == null || array.getLength() < 2) {
+        if (array.getLength() < 2) {
             isValid = false;
         } else {
             int arrayLength = array.getLength();
