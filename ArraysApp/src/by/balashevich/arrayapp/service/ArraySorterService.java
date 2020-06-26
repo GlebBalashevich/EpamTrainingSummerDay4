@@ -2,9 +2,8 @@ package by.balashevich.arrayapp.service;
 
 import by.balashevich.arrayapp.entity.ArithmeticArray;
 import by.balashevich.arrayapp.exception.InvalidArrayDataException;
-import by.balashevich.arrayapp.validator.ArrayValidator;
 
-public class ArraySorter {
+public class ArraySorterService {
 
     public void bubbleSort(ArithmeticArray array) throws InvalidArrayDataException {
         if (array.getLength() < 2) {
@@ -52,10 +51,11 @@ public class ArraySorter {
 
         for (int i = 1; i < arrayLength; i++) {
             for (int j = i; j >= 1; j--) {
-                if (array.getElement(j).getAsInt() < array.getElement(j - 1).getAsInt())
+                if (array.getElement(j).getAsInt() < array.getElement(j - 1).getAsInt()) {
                     swap(array, j, j - 1);
-                else
+                } else {
                     break;
+                }
             }
         }
     }

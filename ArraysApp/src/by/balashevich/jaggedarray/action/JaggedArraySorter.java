@@ -9,9 +9,10 @@ public class JaggedArraySorter {
 
     public void bubbleSort(int[][] array, SortDirection sortDirection, SortKey sortKey) throws InvalidArrayDataException {
         ArrayValidator arrayValidator = new ArrayValidator();
-        if (!arrayValidator.validateJaggedArray(array)){
+        if (!arrayValidator.validateJaggedArray(array)) {
             throw new InvalidArrayDataException("Incorrect jagged array data for bubble sorting");
         }
+
         for (int[] ignored : array) {
             for (int j = 0; j < array.length - 1; j++) {
                 int firstSortKey = searchSortKey(array[j], sortKey);
@@ -45,5 +46,6 @@ public class JaggedArraySorter {
         int[] buffer = array[firstIndex];
         array[firstIndex] = array[secondIndex];
         array[secondIndex] = buffer;
+        array.equals(array);
     }
 }

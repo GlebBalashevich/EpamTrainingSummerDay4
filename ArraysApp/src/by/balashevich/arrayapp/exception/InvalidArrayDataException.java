@@ -1,6 +1,7 @@
 package by.balashevich.arrayapp.exception;
 
 public class InvalidArrayDataException extends Exception {
+
     public InvalidArrayDataException() {
         super();
     }

@@ -37,11 +37,12 @@ public class ArrayDataReader {
     public String readConsoleData() throws InvalidArrayDataException {
         StringBuilder sb = new StringBuilder();
         System.out.println("Enter array capacity:");
+
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))) {
             int arrayCapacity = Integer.parseInt(reader.readLine());
-            if (arrayCapacity > 0) {
+            if (arrayCapacity >= 0) {
                 System.out.println("Fill array");
-                sb.append("[");
+                sb.append("Arithmetic Array:[");
 
                 for (int i = 0; i < arrayCapacity; i++) {
                     sb.append(reader.readLine());
@@ -51,8 +52,6 @@ public class ArrayDataReader {
                 }
 
                 sb.append("]");
-            } else {
-                throw new InvalidArrayDataException("Entered invalid capacity value");
             }
         } catch (IOException e) {
             throw new InvalidArrayDataException("Error while read data from console");

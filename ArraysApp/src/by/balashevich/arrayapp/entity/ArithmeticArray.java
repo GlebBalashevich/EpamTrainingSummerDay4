@@ -33,6 +33,7 @@ public class ArithmeticArray {
         }
 
         array[index] = number;
+
         return true;
     }
 
@@ -46,31 +47,37 @@ public class ArithmeticArray {
 
     @Override
     public boolean equals(Object o) {
+        boolean result = true;
+
         if (this == o) {
             return true;
         }
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
+
         ArithmeticArray arithmeticArray = (ArithmeticArray) o;
         if (array.length != arithmeticArray.array.length) {
             return false;
         }
-        boolean result = true;
+
         for (int i = 0; i < this.array.length; i++) {
             if (array[i] != arithmeticArray.array[i]) {
                 result = false;
             }
         }
+
         return result;
     }
 
     @Override
     public int hashCode() {
         int result = 1;
-        for (int number : array) {
-            result = 17 * result + number;
+
+        for (int element : array) {
+            result = 17 * result + element;
         }
+
         return result;
     }
 
@@ -84,12 +91,14 @@ public class ArithmeticArray {
         StringBuilder sb = new StringBuilder();
         sb.append(result);
         sb.append("[");
+
         for (int number : array) {
             sb.append(number);
             sb.append(", ");
         }
         sb.delete(sb.lastIndexOf(", "), sb.length());
         sb.append("]");
+
         return sb.toString();
     }
 }

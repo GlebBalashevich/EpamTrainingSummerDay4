@@ -7,10 +7,11 @@ public class ArrayValidator {
 
         if (array == null || array.length < 2) {
             isValid = false;
-        }
-        for (int[] subArray : array) {
-            if (subArray == null || subArray.length <= 0) {
-                isValid = false;
+        } else {
+            for (int[] subArray : array) {
+                if (subArray == null || subArray.length <= 0) {
+                    isValid = false;
+                }
             }
         }
 

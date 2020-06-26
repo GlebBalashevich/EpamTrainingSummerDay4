@@ -1,11 +1,10 @@
 package by.balashevich.arrayapp.validator;
 
 import by.balashevich.arrayapp.entity.ArithmeticArray;
-import by.balashevich.arrayapp.exception.InvalidArrayDataException;
 
 public class ArrayValidator {
 
-    public boolean validateArrayBinarySearch(ArithmeticArray array) throws InvalidArrayDataException {
+    public boolean validateArrayBinarySearch(ArithmeticArray array) {
         boolean isValid = true;
 
         if (array.getLength() < 2) {

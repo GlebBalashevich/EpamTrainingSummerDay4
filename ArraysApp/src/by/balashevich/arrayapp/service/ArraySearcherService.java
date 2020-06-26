@@ -4,7 +4,7 @@ import by.balashevich.arrayapp.entity.ArithmeticArray;
 import by.balashevich.arrayapp.exception.InvalidArrayDataException;
 import by.balashevich.arrayapp.validator.ArrayValidator;
 
-public class ArraySearcher {
+public class ArraySearcherService {
     private static final int[] PRIME_DIVIDERS = {2, 3, 5, 7};
 
     public int binarySearch(ArithmeticArray array, int value) throws InvalidArrayDataException {
@@ -116,7 +116,12 @@ public class ArraySearcher {
         for (int i = 0; i < arrayLength; i++) {
             int nextNumber = 1;
             int previousNumber = 0;
-            int sum = 0;
+            int sum;
+
+            if (array.getElement(i).getAsInt() == 0 || array.getElement(i).getAsInt() == 1) {
+                resultArray[resultArrayIndex] = array.getElement(i).getAsInt();
+                resultArrayIndex++;
+            }
 
             while (nextNumber < array.getElement(i).getAsInt()) {
                 sum = previousNumber + nextNumber;
@@ -148,9 +153,8 @@ public class ArraySearcher {
         int resultArrayIndex = 0;
         ArithmeticArray threeFiguresNumbers;
 
-
         for (int i = 0; i < arrayLength; i++) {
-            String stringNumber = String.valueOf(array.getElement(i).getAsInt());
+            String stringNumber = String.valueOf(Math.abs(array.getElement(i).getAsInt()));
 
             if (stringNumber.length() == 3) {
                 char[] numbers = stringNumber.toCharArray();
